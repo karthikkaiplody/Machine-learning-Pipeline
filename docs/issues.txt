@@ -1,0 +1,4 @@
+Issue1: python3.6.0 Doesn't work with cookiecutter.
+    - Throws the AttributeError: 'Token' object has no attribute 'test'   
+    Fix - change the python version to python3.6.2 or greater.
+
