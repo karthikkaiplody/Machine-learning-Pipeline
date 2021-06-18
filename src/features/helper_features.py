@@ -31,3 +31,9 @@ def dataset_info(dataset, dataset_name:str ):
     print(30*"=")
     print(f"Memory Usage: {np.round(dataset.memory_usage(index=True).sum() / 10e5, 3)} MB") 
 
+# Data sampling
+def data_sampling(dataset, frac:float, random_seed: int):
+    data_sampled_a = dataset.sample(frac=frac, random_state=random_seed)
+    data_sampled_b = dataset.drop(data_sampled_a.index).reset_index(drop=True)
+    data_sampled_a.reset_index(drop=True, inplace=True)
+    return data_sampled_a, data_sampled_b
