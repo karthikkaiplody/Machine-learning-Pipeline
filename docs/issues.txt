@@ -2,3 +2,8 @@ Issue1: python3.6.0 Doesn't work with cookiecutter.
     - Throws the AttributeError: 'Token' object has no attribute 'test'   
     Fix - change the python version to python3.6.2 or greater.
 
+Issue2: LightGBM and gcc 8 in MacOS: Library not loaded: /usr/local/opt/gcc/lib/gcc/7/libgomp.1.dylib (https://github.com/microsoft/LightGBM/issues/1369)
+    - Fix https://github.com/microsoft/LightGBM/issues/1369#issuecomment-559503771
+                brew install libomp
+                pip3 install lightgbm
+    - References: Python: https://github.com/microsoft/LightGBM/tree/master/python-package#installation
